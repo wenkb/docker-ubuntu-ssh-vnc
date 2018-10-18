@@ -23,7 +23,7 @@ RUN echo "root:$ROOT_PW" | chpasswd
 # install software
 RUN apt-get -y update \
  # tools
- && apt-get install -y wget net-tools locales bzip2 iputils-ping traceroute firefox \
+ && apt-get install -y wget net-tools locales bzip2 iputils-ping traceroute firefox firefox-locale-zh-hans ttf-wqy-microhei \
  && locale-gen zh_CN.UTF-8 \
  # ssh
  && apt-get install -y openssh-server \
@@ -48,7 +48,7 @@ RUN mkdir -p /home/upload \
  && mkdir -p /home/download
 
 # xfce config
-ADD ./xfce/ /root/
+#ADD ./xfce/ /root/
 
 # copy bash file
 COPY startup.sh /root/startup.sh
