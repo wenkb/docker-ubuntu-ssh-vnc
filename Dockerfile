@@ -8,6 +8,7 @@ LABEL description="ubuntu with ssh and vnc" \
 # envrionment
 ENV DEBIAN_FRONTEND=noninteractive \
     VNC_DISPLAY=:0 \
+    VNC_PORT=5900 \
     VNC_GEOMETRY=1360x768 \
     ROOT_PW=password \
     TZ=Asia/Shanghai \
@@ -53,7 +54,7 @@ ADD ./xfce/ /root/
 COPY startup.sh /root/startup.sh
 RUN chmod +x /root/startup.sh
 
-EXPOSE 22 5900
+EXPOSE 22 $VNC_PORT
 
 CMD ["/root/startup.sh"]
 
