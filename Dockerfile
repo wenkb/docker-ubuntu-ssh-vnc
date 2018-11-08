@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 LABEL description="ubuntu with ssh and vnc" \
       author="wenkb" \
       create_date="2018-10-17" \
-      build_cmd="docker build --rm -t wenkb/docker-ubuntu-ssh-vnc:v1.0 ."
+      build_cmd="docker build --rm -t wenkb/docker-ubuntu-ssh-vnc:v1.1 ."
 
 # envrionment
 ENV DEBIAN_FRONTEND=noninteractive \
